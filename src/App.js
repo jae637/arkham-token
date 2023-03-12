@@ -1,9 +1,16 @@
+import { useState } from 'react';
+import Main from './component/Main';
 import TokenPool from './component/TokenPool';
 
 function App() {
+  const [tokenList, setTokenList] = useState([])
   return (
-    <div style={{ display: "flex" }}>
-      <TokenPool tokenStringList={["BACK", "FRONT1", "FRONT1", "FRONT1", "FRONT1"]}></TokenPool>
+    <div className="container">
+      <Main setTokenList={setTokenList} />
+      {tokenList.length !== 0 ?
+        <TokenPool tokenStringList={tokenList}></TokenPool>
+        : ""
+      }
     </div>
   );
 }
