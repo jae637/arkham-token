@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       {tokenList.length !== 0 ?
-        <TokenPool tokenStringList={tokenList}></TokenPool>
+        <TokenPool tokenStringList={tokenList} setTokenList={setTokenList}></TokenPool>
         : <Main setTokenList={setTokenList} />
       }
     </div>
