@@ -5,11 +5,10 @@ import TokenPool from './component/TokenPool';
 function App() {
   const [tokenList, setTokenList] = useState([])
   return (
-    <div className="container">
-      <Main setTokenList={setTokenList} />
+    <div>
       {tokenList.length !== 0 ?
         <TokenPool tokenStringList={tokenList}></TokenPool>
-        : ""
+        : <Main setTokenList={setTokenList} />
       }
     </div>
   );

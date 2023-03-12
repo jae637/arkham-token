@@ -1,8 +1,6 @@
 .flip { 
-  min-width: 50px;
-  min-height: 50px;
-  max-width: 200px;
-  max-height: 200px;
+  height: 100px;
+  width: 100px;
   perspective: 1100px;
 }
 

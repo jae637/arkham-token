@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import imgPath from '../assets/img/imgPath'
+import { Image } from 'react-bootstrap';
 import './Token.css'
 
 function Token({ src, init, setInit }) {
@@ -15,18 +16,16 @@ function Token({ src, init, setInit }) {
     return (
         <div className="flip">
             <div className={`token ${isFront ? 'token-flag' : ''}`} >
-                <div className="back" style={{
-                    backgroundImage: `url(${imgPath[src]})`,
+                <Image className="back" src={imgPath[src]} style={{
                     backgroundSize: 'cover',
                 }}
                     onClick={() => { setIsFront(false) }}>
-                </div >
-                <div className="front" style={{
-                    backgroundImage: `url(${imgPath.BACK})`,
+                </Image >
+                <Image className="front" src={imgPath.BACK} style={{
                     backgroundSize: 'cover',
                 }}
                     onClick={() => { setIsFront(true) }}>
-                </div >
+                </Image >
             </div>
         </div >
     );
