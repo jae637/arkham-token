@@ -11,7 +11,6 @@ function Main(props) {
 
     useEffect(() => {
         let tempData = sessionStorage.getItem('tokens')
-        console.log(tempData)
         if (tempData) {
             setTokenPool(JSON.parse(tempData));
         }
@@ -42,12 +41,13 @@ function Main(props) {
         return Object.keys(tokenPool).map(key =>
             <Col sm={3} xs={6} key={key} className="my-2">
                 <InputGroup className="p-2">
-                    <Image src={imgPath[key]} height="50" className="me-2">
+                    <Image src={imgPath[key]} height="60" className="me-2">
                     </Image>
                     <Form.Control
                         value={tokenPool[key] * 1}
                         key={key}
                         onChange={(e) => onChangeByKey(e.target.value * 1, key)}
+
                     />
                 </InputGroup>
             </Col>
@@ -55,14 +55,14 @@ function Main(props) {
     }
     return (
         <Container style={{ minHeight: window.innerHeight }} className="d-flex">
-            <div style={{ flexWrap: 'wrap' }} className="d-flex align-content-center justify-content-center">
+            <Form style={{ flexWrap: 'wrap' }} className="d-flex align-content-center justify-content-center">
                 <Row>
                     {columns()}
                 </Row>
-                <div className="d-flex  mt-4">
-                    <Button onClick={makeTokenList}> 확인</Button>
+                <div className="d-flex  my-4">
+                    <Button size="lg" type="submit" onClick={makeTokenList}> 확인</Button>
                 </div>
-            </div>
+            </Form>
         </Container >
     );
 }
