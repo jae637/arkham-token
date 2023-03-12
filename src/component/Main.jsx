@@ -31,6 +31,8 @@ function Main(props) {
     // Input Box Handler
     function onChangeByKey(value, key) {
         let tmp = { ...tokenPool }
+        if (isNaN(value))
+            return
         tmp[key] = value;
         setTokenPool(tmp);
     }
@@ -38,12 +40,11 @@ function Main(props) {
     // Input Box Renderer
     function columns() {
         return Object.keys(tokenPool).map(key =>
-            <Col sm={3} xs={6} key={key}>
+            <Col sm={3} xs={6} key={key} className="my-2">
                 <InputGroup className="p-2">
                     <Image src={imgPath[key]} height="50" className="me-2">
                     </Image>
                     <Form.Control
-                        type="number"
                         value={tokenPool[key] * 1}
                         key={key}
                         onChange={(e) => onChangeByKey(e.target.value * 1, key)}
@@ -53,12 +54,14 @@ function Main(props) {
         )
     }
     return (
-        <Container style={{ minHeight: window.innerHeight }} className="align-content-center">
-            <Row>
-                {columns()}
-            </Row>
-            <div className="d-flex justify-content-center mt-2">
-                <Button onClick={makeTokenList}> 확인</Button>
+        <Container style={{ minHeight: window.innerHeight }} className="d-flex">
+            <div style={{ flexWrap: 'wrap' }} className="d-flex align-content-center justify-content-center">
+                <Row>
+                    {columns()}
+                </Row>
+                <div className="d-flex  mt-4">
+                    <Button onClick={makeTokenList}> 확인</Button>
+                </div>
             </div>
         </Container >
     );
