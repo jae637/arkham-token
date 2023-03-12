@@ -1,0 +1,29 @@
+.flip { 
+  width: 200px;
+  height: 200px;
+  perspective: 1100px;
+}
+
+.token {
+  width: 100%; 
+  height: 100%; 
+  position: relative;
+  transition: .4s;
+  transform-style: preserve-3d;
+}	
+
+.front, .back {
+  position: absolute;
+  width: 100%; 
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 50%;
+}
+
+.back { 
+  transform: rotateY(180deg);
+}
+
+.token-flag {
+  transform: rotateY(180deg);
+}
