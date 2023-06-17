@@ -10,9 +10,7 @@ function Main(props) {
     })
 
     useEffect(() => {
-        console.log(tokenPool, Object.keys(tokenPool))
         let tempData = sessionStorage.getItem('tokens')
-        console.log(tempData)
         if (tempData) {
             setTokenPool(JSON.parse(tempData));
         }
