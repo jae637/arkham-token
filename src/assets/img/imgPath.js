@@ -1,4 +1,5 @@
 const obj = {
+    "BACKGROUND": require("./bg.png"),
     "BACK": require("./token_back.png"),
     "0": require("./token_0.png"),
     "M1": require("./token_m1.png"),
