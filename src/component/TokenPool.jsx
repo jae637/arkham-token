@@ -1,11 +1,17 @@
+import { animated, useSpring } from '@react-spring/web';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Col, Row, Container, Button } from 'react-bootstrap';
 import imgPath from '../assets/img/imgPath'
 import Token from './Token';
 
 function TokenPool({ tokenStringList, setTokenList }) {
+    const animationSetup = {
+        from: { opacity: 0 },
+        to: { opacity: 1 }
+    }
     const [init, setInit] = useState(false);
     const [tokenPool, setTokenPool] = useState([]);
+    const [springs, api] = useSpring(() => animationSetup)
 
     // 토큰 설정 페이지로 이동
     function setTokenInit() {
@@ -19,8 +25,12 @@ function TokenPool({ tokenStringList, setTokenList }) {
 
     // 토큰 리스트를 랜더링 할때 사용
     const TokenList = useCallback(() =>
-        tokenPool.map((item, idx) => <Col sm={2} xs={4} className="my-4 d-flex justify-content-center"> <Token src={item} init={init} setInit={setInit} key={idx} /></Col>)
-        , [tokenPool, init])
+        tokenPool.map((item, idx) => <Col sm={2} xs={4} className="my-4 d-flex justify-content-center">
+            <animated.div style={{ ...springs }}>
+                <Token src={item} init={init} setInit={setInit} key={idx} />
+            </animated.div>
+        </Col>)
+        , [springs, tokenPool, init])
 
     useEffect(() => {
         shuffleToken(tokenStringList);
@@ -33,7 +43,7 @@ function TokenPool({ tokenStringList, setTokenList }) {
                     <TokenList />
                 </Row>
                 <Row className="m-2 mt-5 w-75">
-                    <Button size="lg" className="my-2" onClick={() => { setInit(true) }}>토큰 섞기</Button>
+                    <Button size="lg" className="my-2" onClick={() => { setInit(true); api.start(animationSetup) }}>토큰 섞기</Button>
                     <Button size="lg" variant="warning" className="mt-2" onClick={() => { setTokenInit() }}>토큰 수정</Button>
                 </Row>
             </div>
