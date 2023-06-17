@@ -1,7 +1,7 @@
 const obj = {
     "BACKGROUND": require("./bg.png"),
     "BACK": require("./token_back.png"),
-    "0": require("./token_0.png"),
+    "ZERO": require("./token_0.png"),
     "M1": require("./token_m1.png"),
     "M2": require("./token_m2.png"),
     "M3": require("./token_m3.png"),

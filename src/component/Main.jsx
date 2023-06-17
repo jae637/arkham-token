@@ -5,12 +5,14 @@ import imgPath from '../assets/img/imgPath'
 
 function Main(props) {
     const [tokenPool, setTokenPool] = useState({
-        '0': 0, 'M1': 0, 'M2': 0, 'M3': 0, 'M4': 0, 'M5': 0, 'M6': 0, 'M7': 0, 'M8': 0, 'M9': 0,
-        'P1': 0, 'P2': 0, 'S1': 0, 'S2': 0, 'S3': 0, 'S4': 0, 'S5': 0, 'S6': 0, 'BLESS': 0, 'CURSE': 0
+        'P2': 0, 'P1': 0, 'ZERO': 0, 'M1': 0, 'M2': 0, 'M3': 0, 'M4': 0, 'M5': 0, 'M6': 0, 'M7': 0, 'M8': 0, 'M9': 0,
+        'S1': 0, 'S2': 0, 'S3': 0, 'S4': 0, 'S5': 0, 'S6': 0, 'BLESS': 0, 'CURSE': 0
     })
 
     useEffect(() => {
+        console.log(tokenPool, Object.keys(tokenPool))
         let tempData = sessionStorage.getItem('tokens')
+        console.log(tempData)
         if (tempData) {
             setTokenPool(JSON.parse(tempData));
         }
@@ -38,6 +40,7 @@ function Main(props) {
 
     // Input Box Renderer
     function columns() {
+        console.log(tokenPool)
         return Object.keys(tokenPool).map(key =>
             <Col sm={3} xs={6} key={key} className="my-2">
                 <InputGroup className="p-2">
