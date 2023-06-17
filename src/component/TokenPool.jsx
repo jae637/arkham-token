@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Col, Row, Container, Button } from 'react-bootstrap';
+import imgPath from '../assets/img/imgPath'
 import Token from './Token';
 
 function TokenPool({ tokenStringList, setTokenList }) {
@@ -18,7 +19,7 @@ function TokenPool({ tokenStringList, setTokenList }) {
 
     // 토큰 리스트를 랜더링 할때 사용
     const TokenList = useCallback(() =>
-        tokenPool.map((item, idx) => <Col sm={2} xs={4} className="my-4"> <Token src={item} init={init} setInit={setInit} key={idx} /></Col>)
+        tokenPool.map((item, idx) => <Col sm={2} xs={4} className="my-4 d-flex justify-content-center"> <Token src={item} init={init} setInit={setInit} key={idx} /></Col>)
         , [tokenPool, init])
 
     useEffect(() => {
@@ -28,7 +29,7 @@ function TokenPool({ tokenStringList, setTokenList }) {
     return (
         <Container style={{ minHeight: window.innerHeight }} className="d-flex">
             <div style={{ flexWrap: 'wrap' }} className="d-flex align-content-center justify-content-center">
-                <Row className="mb-5">
+                <Row className="mb-5" style={{ backgroundImage: `url(${imgPath["BACKGROUND"]})`, backgroundSize: '100%', backgroundRepeat: 'no-repeat' }}>
                     <TokenList />
                 </Row>
                 <Row className="m-2 mt-5 w-75">
