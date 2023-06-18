@@ -60,8 +60,8 @@ function Main(props) {
                 <Row>
                     {columns()}
                 </Row>
-                <div className="d-flex my-4 justify-content-center " style={{ flexFlow: 'column' }}>
-                    <div>
+                <div className="d-flex my-4 justify-content-center" style={{ flexFlow: 'column' }}>
+                    <div className="align-self-center">
                         <Button size="lg" type="submit" onClick={makeTokenList} style={{ backgroundColor: 'black', border: '0px' }}> 확 인</Button>
                     </div>
                     <div className="mt-5">
