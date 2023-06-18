@@ -60,8 +60,13 @@ function Main(props) {
                 <Row>
                     {columns()}
                 </Row>
-                <div className="d-flex  my-4">
-                    <Button size="lg" type="submit" onClick={makeTokenList} style={{backgroundColor:'black', border:'0px'}}> 확 인</Button>
+                <div className="d-flex my-4 justify-content-center " style={{ flexFlow: 'column' }}>
+                    <div>
+                        <Button size="lg" type="submit" onClick={makeTokenList} style={{ backgroundColor: 'black', border: '0px' }}> 확 인</Button>
+                    </div>
+                    <div className="mt-5">
+                        Contect : <a style={{ textDecoration: 'none', color: 'black' }} href="mailto:jae637@naver.com">jae637@naver.com</a>
+                    </div>
                 </div>
             </Form>
         </Container >
