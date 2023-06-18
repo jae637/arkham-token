@@ -25,7 +25,7 @@ function TokenPool({ tokenStringList, setTokenList }) {
 
     // 토큰 리스트를 랜더링 할때 사용
     const TokenList = useCallback(() =>
-        tokenPool.map((item, idx) => <Col sm={2} xs={4} className="my-4 d-flex justify-content-center">
+        tokenPool.map((item, idx) => <Col md={2} sm={3} xs={4} className="my-4 d-flex justify-content-center">
             <animated.div style={{ ...springs }}>
                 <Token src={item} init={init} setInit={setInit} key={idx} />
             </animated.div>
@@ -39,7 +39,9 @@ function TokenPool({ tokenStringList, setTokenList }) {
     return (
         <Container style={{ minHeight: window.innerHeight }} className="d-flex webfont-text">
             <div style={{ flexWrap: 'wrap' }} className="d-flex align-content-center justify-content-center">
+                <Row>
                     <TokenList />
+                </Row>
                 <Row className="m-2 mt-5 w-75">
                     <Button size="lg" className="my-2 mixtoken" onClick={() => { setInit(true); api.start(animationSetup) }} >토 큰 섞 기</Button>
                     <Button size="lg" variant="warning" className="mt-2 moditoken" onClick={() => { setTokenInit() }}>뒤 로 가 기</Button>
