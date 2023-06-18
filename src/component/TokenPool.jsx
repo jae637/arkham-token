@@ -1,8 +1,8 @@
 import { animated, useSpring } from '@react-spring/web';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Col, Row, Container, Button } from 'react-bootstrap';
-import imgPath from '../assets/img/imgPath'
 import Token from './Token';
+import './Token.css'
 
 function TokenPool({ tokenStringList, setTokenList }) {
     const animationSetup = {
@@ -37,14 +37,12 @@ function TokenPool({ tokenStringList, setTokenList }) {
     }, [tokenStringList, init])
 
     return (
-        <Container style={{ minHeight: window.innerHeight }} className="d-flex">
+        <Container style={{ minHeight: window.innerHeight }} className="d-flex webfont-text">
             <div style={{ flexWrap: 'wrap' }} className="d-flex align-content-center justify-content-center">
-                <Row className="mb-5" style={{ backgroundImage: `url(${imgPath["BACKGROUND"]})`, backgroundSize: '100%', backgroundRepeat: 'no-repeat' }}>
                     <TokenList />
-                </Row>
                 <Row className="m-2 mt-5 w-75">
-                    <Button size="lg" className="my-2" onClick={() => { setInit(true); api.start(animationSetup) }}>토큰 섞기</Button>
-                    <Button size="lg" variant="warning" className="mt-2" onClick={() => { setTokenInit() }}>토큰 수정</Button>
+                    <Button size="lg" className="my-2 mixtoken" onClick={() => { setInit(true); api.start(animationSetup) }} >토 큰 섞 기</Button>
+                    <Button size="lg" variant="warning" className="mt-2 moditoken" onClick={() => { setTokenInit() }}>뒤 로 가 기</Button>
                 </Row>
             </div>
         </Container >

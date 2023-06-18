@@ -27,3 +27,34 @@
 .token-flag {
   transform: rotateY(180deg);
 }
+
+.bgimg{
+  background-image: url("../assets/img/bg.png");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center;
+  padding: 0%;
+}
+
+.mixtoken{
+background: #422d3f !important; 
+border: 0px;
+}
+
+.moditoken{
+background: #110216 !important;
+border: 0px;
+color: aliceblue;
+}
+
+
+@font-face {
+  font-family: 'RixMomsBlanketR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/RixMomsBlanketR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.webfont-text {
+  font-family: 'RixMomsBlanketR', sans-serif;
+}

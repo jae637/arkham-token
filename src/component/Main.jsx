@@ -55,13 +55,13 @@ function Main(props) {
         )
     }
     return (
-        <Container style={{ minHeight: window.innerHeight }} className="d-flex">
+        <Container style={{ minHeight: window.innerHeight }} className="d-flex webfont-text">
             <Form style={{ flexWrap: 'wrap' }} className="d-flex align-content-center justify-content-center">
                 <Row>
                     {columns()}
                 </Row>
                 <div className="d-flex  my-4">
-                    <Button size="lg" type="submit" onClick={makeTokenList}> 확인</Button>
+                    <Button size="lg" type="submit" onClick={makeTokenList} style={{backgroundColor:'black', border:'0px'}}> 확 인</Button>
                 </div>
             </Form>
         </Container >
