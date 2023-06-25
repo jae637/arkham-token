@@ -18,8 +18,9 @@ function Main(props) {
     // 변수를 가지고 토큰 리스트를 만들 때 사용
     function makeTokenList() {
         let result = []
+        let count = 0
         Object.keys(tokenPool).forEach(key => {
-            for (let i = 0; i < tokenPool[key]; i++) result.push(key)
+            for (let i = 0; i < tokenPool[key]; i++) result.push({ id: count++, tag: key })
         })
         sessionStorage.setItem('tokens', JSON.stringify(tokenPool))
 
