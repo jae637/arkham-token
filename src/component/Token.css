@@ -34,6 +34,7 @@
   background-size:cover;
   background-position: center;
   padding: 0%;
+  overflow: auto;
 }
 
 .mixtoken{
