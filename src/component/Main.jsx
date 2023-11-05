@@ -10,7 +10,7 @@ function Main(props) {
     })
 
     useEffect(() => {
-        let tempData = sessionStorage.getItem('tokens')
+        let tempData = localStorage.getItem('tokens')
         if (tempData) {
             setTokenPool(JSON.parse(tempData));
         }
@@ -22,7 +22,7 @@ function Main(props) {
         Object.keys(tokenPool).forEach(key => {
             for (let i = 0; i < tokenPool[key]; i++) result.push({ id: count++, tag: key })
         })
-        sessionStorage.setItem('tokens', JSON.stringify(tokenPool))
+        localStorage.setItem('tokens', JSON.stringify(tokenPool))
 
         props.setTokenList(result)
 
